@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --uds-navy: #040461;
+  --uds-orange: #fd9800;
+  --uds-orange-hover: #e88a00;
+  --uds-orange-deep: #e07a00;
+  --uds-link: #f18800;
+  --uds-mist: #e9f4ff;
+  --uds-paper: #f7f9fc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #1d1d1f;
+  background: #fff;
+}
+
+.site-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .site-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.btn-primary,
+.btn-cta,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-poppins), Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary,
+.btn-cta {
+  color: #fff;
+  background-color: var(--uds-orange);
+}
+
+.btn-primary {
+  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--uds-orange-hover);
+}
+
+.btn-cta {
+  border-radius: 0.375rem;
+  padding: 0.75rem 2.5rem;
+}
+
+.btn-cta:hover {
+  background-color: var(--uds-orange-deep);
+}
+
+.btn-primary:focus-visible,
+.btn-cta:focus-visible {
+  outline: 2px solid var(--uds-orange);
+  outline-offset: 2px;
+}
+
+.btn-cta:disabled,
+.btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-poppins), Poppins, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--uds-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  color: #e07a00;
+}
+
+.btn-ghost {
+  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+  color: var(--uds-navy);
+  background-color: var(--uds-mist);
+}
+
+.btn-ghost:hover {
+  background-color: #d7ebff;
+}
+
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--uds-navy);
+  outline-offset: 2px;
+}
+
+.btn-on-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  border: 1px solid rgb(255 255 255 / 0.65);
+  padding: 0.75rem 2.5rem;
+  font-family: var(--font-poppins), Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: transparent;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-on-dark:hover {
+  background-color: rgb(255 255 255 / 0.12);
+  border-color: #fff;
+}
+
+.btn-on-dark:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-in {
+  animation: hero-in 0.85s ease-out both;
+}
+
+.section-kicker {
+  font-family: var(--font-blinker), Blinker, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--uds-link);
+}
+
+@media (min-width: 768px) {
+  .section-kicker {
+    font-size: 1.25rem;
+  }
+}
+
+.section-title {
+  font-family: var(--font-blinker), Blinker, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--uds-navy);
+}
+
+@media (min-width: 640px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+.card-hover {
+  border-top: 1px solid rgb(4 4 97 / 0.1);
+  padding-top: 1.25rem;
+  transition: border-color 0.2s ease;
+}
+
+.card-hover:hover {
+  border-top-color: var(--uds-orange);
+}
+
+.field {
+  margin-top: 0.25rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 0;
+  background: #fff;
+  padding: 0.625rem 0.75rem;
+  color: var(--uds-navy);
+  box-shadow: 0 0 0 1px rgb(4 4 97 / 0.1);
+}
+
+.field:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--uds-orange);
+}
+
+.soft-panel {
+  border-radius: 15px;
+  background: var(--uds-mist);
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .soft-panel {
+    padding: 2rem;
+  }
+}
