@@ -67,9 +67,9 @@ export const UNIQUE_IMAGES = {
 };
 
 export const JOURNEY_IMAGES = {
-  classes: "/journey/classes.jpg",
-  degree: "/journey/degree.jpg",
-  career: "/journey/resume.jpg",
+  classes: "/journey/classes.png",
+  degree: "/journey/degree.png",
+  career: "/journey/resume.png",
 };
 
 export const ACCREDITORS = [
