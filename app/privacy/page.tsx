@@ -37,7 +37,7 @@ export default function PrivacyPage() {
           Lodge a complaint with a supervisory authority (for example the Brandenburg DPA) or, in India,
           with the Data Protection Board of India once operational. Contact {SITE.email}.
         </p>
-        <p className="text-sm text-gray-500">This notice summarises processing for the India website. Programme applications follow the privacy information shown in the official portal.</p>
+        <p className="text-sm text-gray-500">Programme applications follow the privacy information shown in the application portal.</p>
       </article>
     </>
   );

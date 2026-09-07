@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { mbas, masters } from "@/lib/programs";
 import { CATALOGUE_IMAGES } from "@/lib/media";
+import { SITE } from "@/lib/site";
 import { ProgramCard } from "./ProgramCard";
 
 const tabs = [
@@ -50,8 +50,10 @@ export function StudyExplorer() {
           </div>
         ) : null}
         {tab === "micro" ? (
-          <Link
-            href="/study/micro-degrees"
+          <a
+            href={SITE.microDegreeUrl}
+            target="_blank"
+            rel="noreferrer"
             className="group grid overflow-hidden rounded-[15px] bg-mist md:grid-cols-2"
           >
             <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[240px]">
@@ -66,9 +68,9 @@ export function StudyExplorer() {
             <div className="flex flex-col justify-center p-6 md:p-8">
               <h3 className="font-blinker text-2xl font-semibold text-navy">Micro-Degrees</h3>
               <p className="mt-2 text-sm text-navy/70">3 months · 5 ECTS · €900</p>
-              <span className="btn-secondary mt-5">Browse catalogue →</span>
+              <span className="btn-secondary mt-5">Open on german-uds.de →</span>
             </div>
-          </Link>
+          </a>
         ) : null}
       </div>
     </div>

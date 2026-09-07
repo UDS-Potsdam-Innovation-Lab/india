@@ -5,13 +5,13 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact German UDS from India: office email, Potsdam headquarters, Student Affairs, and an enquiry form.",
+  description: "Contact German UDS: office email, Potsdam headquarters, Student Affairs, and an enquiry form.",
 };
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero kicker="Contact" title="Talk to German UDS" body="Headquarters in Potsdam. Student Affairs for India-based applicants." />
+      <PageHero kicker="Contact" title="Talk to German UDS" body="Headquarters in Potsdam. Student Affairs supports you from enquiry to graduation." />
       <section className="site-container grid gap-10 py-14 lg:grid-cols-2">
         <div>
           <h2 className="section-title">CloudHouse</h2>

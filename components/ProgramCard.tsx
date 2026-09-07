@@ -21,14 +21,19 @@ export function ProgramCard({ program }: { program: Program }) {
       <div className="flex flex-1 flex-col p-5 md:p-6">
         <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#f18800]">
           {program.kind === "master" ? "Master" : "MBA"}
+          {program.fastTrack ? " · Fast Track available" : ""}
         </p>
-        <h3 className="mt-2 font-blinker text-2xl font-semibold text-navy">{program.title}</h3>
+        <h3 className="mt-2 line-clamp-2 min-h-[4rem] font-blinker text-2xl font-semibold text-navy">
+          {program.title}
+        </h3>
         <p className="mt-2 text-sm text-navy/70">
           {program.years} year{program.years > 1 ? "s" : ""} · {program.ects} ECTS · {program.fees}
         </p>
-        <Link href={href} className="btn-secondary mt-5">
-          View programme →
-        </Link>
+        <div className="mt-auto pt-5">
+          <Link href={href} className="btn-secondary">
+            View programme →
+          </Link>
+        </div>
       </div>
     </article>
   );

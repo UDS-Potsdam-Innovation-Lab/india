@@ -15,8 +15,8 @@ export function orgJsonLd() {
     "@type": "CollegeOrUniversity",
     name: SITE.name,
     alternateName: [SITE.shortName, SITE.indiaName],
-    url: SITE.url,
-    sameAs: [SITE.mainSite, SITE.social.linkedin],
+    url: SITE.mainSite,
+    sameAs: [SITE.url, SITE.social.linkedin],
     email: SITE.email,
     telephone: SITE.phone,
     address: {

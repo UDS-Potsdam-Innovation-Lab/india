@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Program } from "@/lib/programs";
 import { PageHero } from "@/components/PageHero";
 import { Cta } from "@/components/Cta";
-import { programImage } from "@/lib/media";
 
 export function ProgramDetail({ program }: { program: Program }) {
   return (
@@ -10,8 +9,23 @@ export function ProgramDetail({ program }: { program: Program }) {
       <PageHero
         kicker={program.kind === "master" ? "Master's programme" : "MBA programme"}
         title={program.title}
-        body={program.tagline}
-        image={programImage(program.slug)}
+        image={null}
+        body={
+          program.fastTrack ? (
+            <>
+              <p>{program.tagline}</p>
+              <p>
+                Fast Track available: complete this Master&apos;s in one year (60 ECTS) if you hold a STEM
+                bachelor&apos;s with 240 ECTS or equivalent.{" "}
+                <Link href="/fast-track" className="font-semibold text-[#f18800] hover:underline">
+                  How Fast Track works →
+                </Link>
+              </p>
+            </>
+          ) : (
+            program.tagline
+          )
+        }
       />
       <section className="site-container py-12">
         <div className="grid gap-8 lg:grid-cols-3">
@@ -21,7 +35,7 @@ export function ProgramDetail({ program }: { program: Program }) {
               <p className="mt-4 leading-relaxed text-gray-700">{program.overview}</p>
             </div>
             <div className="border-t border-navy/10 pt-6">
-              <h2 className="font-blinker text-2xl font-semibold text-navy">Why this programme from India</h2>
+              <h2 className="font-blinker text-2xl font-semibold text-navy">Why this programme</h2>
               <p className="mt-3 text-gray-700">{program.indiaFit}</p>
             </div>
             <div>
@@ -78,6 +92,12 @@ export function ProgramDetail({ program }: { program: Program }) {
                 <div><dt className="text-gray-500">Language</dt><dd className="text-navy">{program.language}</dd></div>
                 <div><dt className="text-gray-500">Fees</dt><dd className="text-navy">{program.fees}</dd></div>
                 <div><dt className="text-gray-500">Study mode</dt><dd className="text-navy">{program.mode} · fully online</dd></div>
+                {program.fastTrack ? (
+                  <div>
+                    <dt className="text-gray-500">Fast Track</dt>
+                    <dd className="text-navy">Available — 1 year · 60 ECTS with a STEM bachelor&apos;s of 240 ECTS</dd>
+                  </div>
+                ) : null}
                 <div><dt className="text-gray-500">Application deadline</dt><dd className="text-navy">20 September 2026</dd></div>
                 {program.coordinator ? (
                   <div><dt className="text-gray-500">Coordinator</dt><dd className="text-navy">{program.coordinator}</dd></div>
@@ -86,6 +106,11 @@ export function ProgramDetail({ program }: { program: Program }) {
               <Link href={program.applyPath} className="btn-cta mt-6 w-full">
                 Apply
               </Link>
+              {program.fastTrack ? (
+                <Link href={`/apply?program=${program.slug}-fast-track`} className="btn-secondary mt-4">
+                  Apply via Fast Track →
+                </Link>
+              ) : null}
               <a href={program.officialUrl} className="btn-secondary mt-4 inline-flex" target="_blank" rel="noreferrer">
                 Official page on german-uds.de →
               </a>

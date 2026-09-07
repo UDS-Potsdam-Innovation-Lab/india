@@ -16,7 +16,7 @@ export default function WhyIndiaPage() {
       <PageHero
         kicker="India"
         title="A German university degree without leaving home."
-        body="German UDS was built for people who cannot or should not relocate — for family, work or cost. For Indian applicants that is the whole point: the same state-recognised degree, minus travel, housing and visa overhead."
+        body="German UDS was built for people who cannot or should not relocate — for family, work or cost. You earn the same state-recognised degree, minus the travel, housing and visa overhead."
       />
       <section className="site-container py-14 space-y-14">
         <div className="grid gap-10 md:grid-cols-2">
@@ -25,7 +25,7 @@ export default function WhyIndiaPage() {
             ["German-accredited", "Not a private certificate mill. A Brandenburg state-recognised university; programmes accredited by the Akkreditierungsrat and ASIIN."],
             ["Save travel and housing", "No flights every semester, no WG hunt, no blocked account for the online degree. Tuition is the main cost."],
             ["Apply for jobs afterwards", "You hold a German university Master's or MBA. Use it when applying in India, with European employers, or for roles that list a recognised postgraduate degree. We do not guarantee placement or a visa."],
-            ["Student Affairs", "Application drop-ins, personal sessions and webinars. Someone answers the India-specific questions: documents, English proof, time zones, payment."],
+            ["Student Affairs", "Application drop-ins, personal sessions and webinars. Someone answers the practical questions: documents, English proof, time zones, payment."],
             ["Germany remains optional", "You do not need to move to earn the degree. If you later want Berlin, The Founder's MBAs are the announced on-campus founder pathway."],
           ].map(([t, b]) => (
             <article key={t} className="card-hover">

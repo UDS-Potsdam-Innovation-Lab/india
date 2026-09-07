@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { ApplyForm } from "@/components/ApplyForm";
 import { SITE } from "@/lib/site";
+import { canonicalToMain, MAIN_PATHS } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Apply from India",
-  description: "Start a German UDS application from India, or email Student Affairs first. Official applications run on german-uds.de.",
+  title: "Apply",
+  description:
+    "Start a German UDS application, or email Student Affairs first. Master's and MBA applications are completed on german-uds.de.",
+  ...canonicalToMain(MAIN_PATHS.apply),
 };
 
 type Props = { searchParams: Promise<{ program?: string }> };
@@ -16,7 +19,7 @@ export default async function ApplyPage({ searchParams }: Props) {
     <>
       <PageHero
         kicker="Apply"
-        title="Begin from India. Submit on the official portal."
+        title="Start your application."
         body="Use this form to brief Student Affairs. Master's and MBA applications are completed on the German UDS portal. Micro-Degrees can be booked immediately."
       />
       <section className="site-container grid gap-10 py-14 lg:grid-cols-2">
@@ -31,7 +34,7 @@ export default async function ApplyPage({ searchParams }: Props) {
               , verify email, then start the application.
             </li>
             <li>
-              <strong>India desk first.</strong> Send the form so Student Affairs can check documents,
+              <strong>Student Affairs first.</strong> Send the form so Student Affairs can check documents,
               Fast Track eligibility or Founder&apos;s MBA interest before you pay an application fee or tuition.
             </li>
           </ol>

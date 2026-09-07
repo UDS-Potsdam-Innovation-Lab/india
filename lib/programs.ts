@@ -22,12 +22,23 @@ export type Program = {
   modules: { quarter: string; items: string[] }[];
   electives: string[];
   indiaFit: string;
+  fastTrack?: boolean;
 };
+
+export type Quarter = "Q1" | "Q2" | "Q3" | "Q4";
+
+export const QUARTERS: { id: Quarter; label: string; months: string }[] = [
+  { id: "Q1", label: "Quarter 1", months: "Jan – Mar" },
+  { id: "Q2", label: "Quarter 2", months: "Apr – Jun" },
+  { id: "Q3", label: "Quarter 3", months: "Jul – Sep" },
+  { id: "Q4", label: "Quarter 4", months: "Oct – Dec" },
+];
 
 export type MicroDegree = {
   slug: string;
   title: string;
   category: "AI" | "Cybersecurity" | "Business" | "XR" | "Foundations";
+  quarter: Quarter;
   summary: string;
   ects: number;
   duration: string;
@@ -51,6 +62,7 @@ export const masters: Program[] = [
     coordinator: "Prof. Dr. Felix Weitkämper",
     applyPath: "/apply?program=applied-ai",
     officialUrl: "https://german-uds.de/study/msc-applied-ai",
+    fastTrack: true,
     requirements: [
       "Bachelor's degree in a STEM discipline with at least 180 ECTS",
       "English Level B2 (CEFR) or equivalent",
@@ -101,6 +113,7 @@ export const masters: Program[] = [
     mode: "Full-time / part-time",
     applyPath: "/apply?program=cybersecurity",
     officialUrl: "https://german-uds.de/study/msc-cybersecurity",
+    fastTrack: true,
     requirements: [
       "Bachelor's degree from STEM disciplines or another relevant field",
       "English Level B2 (CEFR) or equivalent",
@@ -139,6 +152,7 @@ export const masters: Program[] = [
     mode: "Full-time / part-time",
     applyPath: "/apply?program=advanced-digital-reality",
     officialUrl: "https://german-uds.de/study/msc-advanced-digital-reality",
+    fastTrack: true,
     requirements: [
       "Bachelor's degree from STEM disciplines or any other discipline",
       "English Level B2 (CEFR) or equivalent",
@@ -176,6 +190,7 @@ export const masters: Program[] = [
     mode: "Full-time / part-time",
     applyPath: "/apply?program=digital-leadership",
     officialUrl: "https://german-uds.de/study/programs/master",
+    fastTrack: true,
     requirements: [
       "Bachelor's degree (any discipline; STEM background recommended but not required)",
       "English Level B2 (CEFR) or equivalent",
@@ -521,27 +536,57 @@ export const mbas: Program[] = [
 ];
 
 export const microDegrees: MicroDegree[] = [
-  { slug: "ai-ethics", title: "AI Ethics in the Digital Economy", category: "AI", summary: "Ethical challenges of AI across law, urban planning, finance and healthcare, including comparative regulation.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "ai-business-innovation", title: "AI-Powered Business Innovation", category: "Business", summary: "Use AI to drive innovation, digital transformation and new ventures, from literacy to pitching a viable model.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "advanced-deep-learning", title: "Advanced Deep Learning", category: "AI", summary: "Neural networks from CNNs to transformers and agents, with efficient AI, compression and deployment.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "applications-of-ai", title: "Applications of AI", category: "AI", summary: "Bridge theoretical AI knowledge and real-world application through teamwork, experimentation and iteration.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "deep-learning", title: "Deep Learning (ML II)", category: "AI", summary: "Build deep networks, train with popular libraries, deploy in the cloud, and meet reinforcement learning.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "nlp", title: "Natural Language Processing", category: "AI", summary: "Current techniques in NLP for language understanding, generation and applied language systems.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "explainability-ai", title: "Explainability in AI Systems", category: "AI", summary: "Build ethical, transparent AI-backed systems using explainable AI (XAI) methods.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "cyber-fundamentals", title: "Cybersecurity Fundamentals", category: "Cybersecurity", summary: "CIA triad, threats, authentication, cryptography, system, network and enterprise security, and compliance.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "systems-network-security", title: "Systems & Network Security", category: "Cybersecurity", summary: "Vulnerabilities from traditional computers to IoT and 6G, attack vectors and practical analysis tools.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "identity-management", title: "Identity Management and Authentication", category: "Cybersecurity", summary: "Security engineering methods that ensure authorised access to data and systems.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "info-sec-management", title: "Information Security Management", category: "Cybersecurity", summary: "Security principles, industry standards, frameworks and critical evaluation for organisations.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "computer-forensics", title: "Computer Forensics", category: "Cybersecurity", summary: "Investigate and report digital evidence across computers, mobile, cloud and networks.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "digital-leadership-innovation", title: "Digital Age Leadership and Innovation Management", category: "Business", summary: "Leadership and change-management skills to drive digital transformation and innovation.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "digital-business-models", title: "Digital Business Models & Venture Building", category: "Business", summary: "New ways of value creation and remaining competitive in an increasingly digital world.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "strategic-management", title: "Strategic Management and Entrepreneurial Transformation", category: "Business", summary: "Economic foundations of strategy and entrepreneurial transformation across industries.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "design-thinking", title: "Design Thinking", category: "Foundations", summary: "User-centric innovation methods used in the German UDS Rootcamp onboarding.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "coding-camp-i", title: "Coding Camp I: Fundamentals", category: "Foundations", summary: "Team software-development project to experience how modern software is built.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "immersive-technologies", title: "Immersive Technologies", category: "XR", summary: "3D modelling, real-time rendering and interaction for engaging AR/VR experiences.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "virtual-worlds", title: "Building Virtual Worlds and Simulated Environments", category: "XR", summary: "Design immersive worlds with geometry, light, physics and interaction using tools such as Unity.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
-  { slug: "big-data-cloud", title: "Big Data, Software Systems, Cloud Computing", category: "Foundations", summary: "Platforms, systems and utilisation of big data and cloud technologies in industry.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "ai-ethics", title: "AI Ethics in the Digital Economy", category: "AI", quarter: "Q4", summary: "Ethical challenges of AI across law, urban planning, finance and healthcare, including comparative regulation.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "ai-business-innovation", title: "AI-Powered Business Innovation", category: "Business", quarter: "Q3", summary: "Use AI to drive innovation, digital transformation and new ventures, from literacy to pitching a viable model.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "advanced-deep-learning", title: "Advanced Deep Learning", category: "AI", quarter: "Q3", summary: "Neural networks from CNNs to transformers and agents, with efficient AI, compression and deployment.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "applications-of-ai", title: "Applications of AI", category: "AI", quarter: "Q4", summary: "Bridge theoretical AI knowledge and real-world application through teamwork, experimentation and iteration.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "deep-learning", title: "Deep Learning (ML II)", category: "AI", quarter: "Q4", summary: "Build deep networks, train with popular libraries, deploy in the cloud, and meet reinforcement learning.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "nlp", title: "Natural Language Processing", category: "AI", quarter: "Q1", summary: "Current techniques in NLP for language understanding, generation and applied language systems.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "explainability-ai", title: "Explainability in AI Systems", category: "AI", quarter: "Q4", summary: "Build ethical, transparent AI-backed systems using explainable AI (XAI) methods.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "cyber-fundamentals", title: "Cybersecurity Fundamentals", category: "Cybersecurity", quarter: "Q4", summary: "CIA triad, threats, authentication, cryptography, system, network and enterprise security, and compliance.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "systems-network-security", title: "Systems & Network Security", category: "Cybersecurity", quarter: "Q4", summary: "Vulnerabilities from traditional computers to IoT and 6G, attack vectors and practical analysis tools.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "identity-management", title: "Identity Management and Authentication", category: "Cybersecurity", quarter: "Q3", summary: "Security engineering methods that ensure authorised access to data and systems.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "info-sec-management", title: "Information Security Management", category: "Cybersecurity", quarter: "Q4", summary: "Security principles, industry standards, frameworks and critical evaluation for organisations.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "computer-forensics", title: "Computer Forensics", category: "Cybersecurity", quarter: "Q1", summary: "Investigate and report digital evidence across computers, mobile, cloud and networks.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "digital-leadership-innovation", title: "Digital Age Leadership and Innovation Management", category: "Business", quarter: "Q4", summary: "Leadership and change-management skills to drive digital transformation and innovation.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "digital-business-models", title: "Digital Business Models & Venture Building", category: "Business", quarter: "Q1", summary: "New ways of value creation and remaining competitive in an increasingly digital world.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "strategic-management", title: "Strategic Management and Entrepreneurial Transformation", category: "Business", quarter: "Q3", summary: "Economic foundations of strategy and entrepreneurial transformation across industries.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "design-thinking", title: "Design Thinking", category: "Foundations", quarter: "Q1", summary: "User-centric innovation methods used in the German UDS Rootcamp onboarding.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "coding-camp-i", title: "Coding Camp I: Fundamentals", category: "Foundations", quarter: "Q4", summary: "Team software-development project to experience how modern software is built.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "immersive-technologies", title: "Immersive Technologies", category: "XR", quarter: "Q4", summary: "3D modelling, real-time rendering and interaction for engaging AR/VR experiences.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "virtual-worlds", title: "Building Virtual Worlds and Simulated Environments", category: "XR", quarter: "Q1", summary: "Design immersive worlds with geometry, light, physics and interaction using tools such as Unity.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
+  { slug: "big-data-cloud", title: "Big Data, Software Systems, Cloud Computing", category: "Foundations", quarter: "Q4", summary: "Platforms, systems and utilisation of big data and cloud technologies in industry.", ects: 5, duration: "3 months", intake: "Quarterly", fee: "€900" },
 ];
+
+const MICRO_OFFICIAL_SLUGS: Record<string, string> = {
+  "ai-ethics": "ai-ethics-in-the-digital-economy",
+  "ai-business-innovation": "ai-powered-business-innovation-from-automation-to-entrepreneurship",
+  "advanced-deep-learning": "advanced-deep-learning",
+  "applications-of-ai": "applications-of-ai",
+  "deep-learning": "deep-learning-ml-ii",
+  nlp: "natural-language-processing",
+  "explainability-ai": "explainability-in-ai-systems",
+  "cyber-fundamentals": "cybersecurity-fundamentals",
+  "systems-network-security": "systems--network-security",
+  "identity-management": "identity-management-and-authentication",
+  "info-sec-management": "information-security-management",
+  "computer-forensics": "computer-forensics",
+  "digital-leadership-innovation": "digital-age-leadership-and-innovation-management",
+  "digital-business-models": "digital-business-models--venture-building",
+  "strategic-management": "strategic-management-and-entrepreneurial-transformation",
+  "design-thinking": "design-thinking",
+  "coding-camp-i": "coding-camp-i-fundamentals",
+  "immersive-technologies": "immersive-technologies",
+  "virtual-worlds": "building-virtual-worlds-and-simulated-environments",
+  "big-data-cloud": "big-data-software-systems-cloud-computing",
+};
+
+export function microOfficialUrl(slug: string) {
+  const official = MICRO_OFFICIAL_SLUGS[slug];
+  return official
+    ? `https://german-uds.de/study/${official}`
+    : "https://german-uds.de/study/programs/micro-degree";
+}
 
 export function getProgram(kind: DegreeKind, slug: string) {
   const list = kind === "master" ? masters : mbas;

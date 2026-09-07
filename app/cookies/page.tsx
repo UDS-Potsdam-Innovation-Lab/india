@@ -14,7 +14,7 @@ export default function CookiesPage() {
         </p>
         <p>
           If you choose “Accept all”, we may later enable privacy-respecting analytics. Until that is
-          configured, this India site does not load third-party advertising cookies.
+          configured, this site does not load third-party advertising cookies.
         </p>
         <p>
           You can clear the stored choice by deleting site data for this domain in your browser, then

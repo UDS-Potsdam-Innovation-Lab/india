@@ -43,17 +43,17 @@ export default function FoundersMbaPage() {
             </ul>
           </div>
           <aside className="soft-panel">
-            <p className="section-kicker">India angle</p>
+            <p className="section-kicker">How it fits together</p>
             <h2 className="mt-2 font-blinker text-2xl font-semibold text-navy">Stay online first, Berlin later</h2>
             <p className="mt-3 text-gray-600">
-              Most German UDS programmes are completed fully online from India. The Founder&apos;s MBAs are
-              the on-the-ground Germany option: if you later want to live and build in Berlin, this is
-              the pathway the university has announced with BCBT.
+              Most German UDS programmes are completed fully online. The Founder&apos;s MBAs are the
+              on-the-ground Germany option: if you later want to live and build in Berlin, this is the
+              pathway the university has announced with BCBT.
             </p>
             <p className="mt-4 text-gray-600">
-              A typical sequence for Indian applicants: complete a German UDS online MBA or Master&apos;s
-              from home first (no visa required for that degree), then apply to The Founder&apos;s MBAs when
-              admissions open — or enquire now so Student Affairs can flag you when the portal opens.
+              A typical sequence: complete a German UDS online MBA or Master&apos;s from home first (no
+              visa required for that degree), then apply to The Founder&apos;s MBAs when admissions open —
+              or enquire now so Student Affairs can flag you when the portal opens.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-5">
               <Link href="/apply?program=Founder's%20MBAs" className="btn-cta">

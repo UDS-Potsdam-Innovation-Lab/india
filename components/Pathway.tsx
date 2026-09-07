@@ -6,58 +6,63 @@ import { useState } from "react";
 const steps = [
   {
     id: "fast",
-    title: "1. Fast Track",
+    label: "Fast Track",
+    title: "Fast Track Master's",
     time: "1 year · 60 ECTS · €7,500",
     body: "If you already hold a STEM bachelor's with 240 ECTS or equivalent, complete a German UDS Master's in four quarters — fully online, English, full-time or part-time.",
     href: "/fast-track",
   },
   {
     id: "degree",
-    title: "2. Two-year Master's",
+    label: "Master's",
+    title: "Two-year Master's",
     time: "2 years · 120 ECTS · €7,500 p.a.",
-    body: "The standard route if your bachelor's is 180 ECTS. Intakes in April and October. English throughout, studied from India.",
+    body: "The standard route if your bachelor's carries 180 ECTS. Intakes in April and October, English throughout, studied from home.",
     href: "/study/masters",
   },
   {
     id: "mba",
-    title: "3. MBA",
+    label: "MBA",
+    title: "One-year MBA",
     time: "1 year · 60 ECTS · €7,500",
-    body: "For professionals with at least three years' experience in a digital environment. Complete from India while you work.",
+    body: "For professionals with at least three years' experience in a digital environment. Complete it from home while you keep working.",
     href: "/study/mba",
-  },
-  {
-    id: "next",
-    title: "4. After graduation",
-    time: "Work, or Berlin option",
-    body: "Use the German university degree when applying for jobs. Or explore The Founder's MBAs if you later want a Berlin-based founder pathway.",
-    href: "/founders-mba",
   },
 ];
 
 export function Pathway() {
   const [active, setActive] = useState(0);
+  const step = steps[active];
 
   return (
-    <div>
-      <div className="flex flex-wrap gap-x-6 gap-y-2 border-b border-navy/10">
-        {steps.map((step, i) => (
+    <div className="ring-grad glass rounded-[20px] p-6 md:p-7">
+      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Entry route">
+        {steps.map((item, index) => (
           <button
-            key={step.id}
+            key={item.id}
             type="button"
-            onClick={() => setActive(i)}
-            className={`border-b-2 pb-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] transition-colors ${
-              active === i ? "border-[#fd9800] text-navy" : "border-transparent text-gray-500 hover:text-navy"
+            role="tab"
+            aria-selected={active === index}
+            onClick={() => setActive(index)}
+            className={`rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] transition-colors ${
+              active === index
+                ? "bg-[#fd9800] text-white"
+                : "bg-navy/[0.06] text-navy/60 hover:bg-navy/10 hover:text-navy"
             }`}
           >
-            {step.title}
+            {item.label}
           </button>
         ))}
       </div>
-      <div className="pt-6">
-        <p className="text-sm font-semibold text-[#f18800]">{steps[active].time}</p>
-        <h3 className="mt-1 font-blinker text-2xl font-semibold text-navy">{steps[active].title}</h3>
-        <p className="mt-3 text-gray-600">{steps[active].body}</p>
-        <Link href={steps[active].href} className="btn-secondary mt-5">
+
+      <div className="mt-6 min-h-[190px]">
+        <p className="font-blinker text-5xl font-semibold text-navy/10">
+          {String(active + 1).padStart(2, "0")}
+        </p>
+        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#f18800]">{step.time}</p>
+        <h3 className="mt-2 font-blinker text-2xl font-semibold text-navy">{step.title}</h3>
+        <p className="mt-3 text-sm leading-relaxed text-navy/70">{step.body}</p>
+        <Link href={step.href} className="btn-secondary mt-5">
           Open this step →
         </Link>
       </div>

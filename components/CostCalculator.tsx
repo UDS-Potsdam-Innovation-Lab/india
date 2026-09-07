@@ -27,8 +27,9 @@ export function CostCalculator() {
   }, [years, rent]);
 
   return (
-    <div className="rounded-[15px] bg-paper p-6 md:p-8">
-      <h3 className="font-blinker text-2xl font-semibold text-navy">India cost comparison</h3>
+    <div className="ring-grad glass rounded-[20px] p-6 md:p-8">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#f18800]">Run the numbers</p>
+      <h3 className="mt-2 font-blinker text-2xl font-semibold text-navy">India cost comparison</h3>
       <p className="mt-2 text-sm text-gray-600">
         Illustrative only. Tuition matches published German UDS fees. Relocation figures are typical
         student-living estimates, not an official quote.
@@ -61,7 +62,7 @@ export function CostCalculator() {
       </div>
       <div className="mt-6 grid gap-6 md:grid-cols-2">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#f18800]">Study from India</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#f18800]">Study from home</p>
           <p className="mt-1 font-blinker text-3xl font-semibold text-navy">€{result.onlineTotal.toLocaleString("en-IN")}</p>
           <p className="mt-2 text-sm text-gray-600">Tuition only. Live at home. No blocked account, visa or German rent.</p>
         </div>

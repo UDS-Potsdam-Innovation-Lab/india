@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Imprint",
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function ImprintPage() {
@@ -43,10 +43,7 @@ export default function ImprintPage() {
           . We are neither obliged nor willing to participate in dispute resolution before a consumer
           arbitration board. Contact {SITE.presidiumEmail} if a service did not meet expectations.
         </p>
-        <p>
-          This India website is an information site of German University of Digital Science gGmbH. It is
-          not a separate legal entity.
-        </p>
+        <p>This website is operated by German University of Digital Science gGmbH.</p>
       </section>
     </>
   );

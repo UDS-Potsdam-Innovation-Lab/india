@@ -4,6 +4,7 @@ import { ProgramDetail } from "@/components/ProgramDetail";
 import { JsonLd } from "@/components/JsonLd";
 import { getProgram, mbas } from "@/lib/programs";
 import { SITE } from "@/lib/site";
+import { canonicalToMain } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: program.title,
     description: `${program.title} — ${program.duration}. Fully online German-accredited MBA for professionals in India.`,
-    alternates: { canonical: `${SITE.url}/study/mba/${program.slug}` },
+    ...canonicalToMain(program.officialUrl),
   };
 }
 

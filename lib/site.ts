@@ -75,20 +75,20 @@ export const FAQ = [
     a: "Yes. German University of Digital Science is a state-recognised university in Brandenburg. Its degree programmes are accredited by the German Accreditation Council (Akkreditierungsrat) and assessed by ASIIN. The Wissenschaftsrat reviewed the university concept positively. Graduates receive a full German university degree, not a private certificate.",
   },
   {
-    q: "Can I complete the degree from India without moving to Germany?",
+    q: "Can I complete the degree without moving to Germany?",
     a: "Yes. All Master's (including Fast Track), MBA and Micro-Degree programmes are delivered fully online in English. There is no compulsory campus attendance. You can live at home, keep working, and still earn a German-accredited degree.",
   },
   {
     q: "Do I need APS, a blocked account, or a student visa?",
-    a: "Not for the online degree itself. APS, blocked accounts and student visas apply when you relocate to Germany for on-campus study. German UDS programmes are completed digitally from India, so those relocation steps are not required for enrolment. An optional later pathway to Germany exists through The Founder's MBAs.",
+    a: "Not for the online degree itself. APS, blocked accounts and student visas apply when you relocate to Germany for on-campus study. German UDS programmes are completed digitally from home, so those relocation steps are not required for enrolment. An optional later pathway to Germany exists through The Founder's MBAs.",
   },
   {
     q: "Will the degree help me apply for jobs after graduation?",
-    a: "You graduate with a German university Master's or MBA, which you can use when applying for roles in India, Germany and internationally. A German university degree is a recognised higher-education qualification. We do not guarantee employment or a residence permit. Student Affairs can advise on career documentation and next steps.",
+    a: "You graduate with a German university Master's or MBA, which you can use when applying for roles at home, in Germany and internationally. A German university degree is a recognised higher-education qualification. We do not guarantee employment or a residence permit. Student Affairs can advise on career documentation and next steps.",
   },
   {
     q: "What does it cost compared with studying in Germany in person?",
-    a: "Tuition is €7,500 per year for Master's and MBA programmes, or €900 per Micro-Degree. Studying from India means you do not pay German rent, a blocked account, visa fees or relocation flights. Use the cost comparison on this site for an illustrative breakdown.",
+    a: "Tuition is €7,500 per year for Master's and MBA programmes, or €900 per Micro-Degree. Studying online means you do not pay German rent, a blocked account, visa fees or relocation flights. Use the cost comparison on this site for an illustrative breakdown.",
   },
   {
     q: "What is the Fast Track?",
@@ -104,10 +104,10 @@ export const FAQ = [
   },
   {
     q: "How do I apply?",
-    a: "Micro-Degrees can be booked directly. For Master's and MBA programmes, create an account on the German UDS application portal, verify your email, then start the application. India applicants can also book a Student Affairs session first.",
+    a: "Micro-Degrees can be booked directly. For Master's and MBA programmes, create an account on the German UDS application portal, verify your email, then start the application. You can also book a Student Affairs session first.",
   },
   {
-    q: "What support will I receive as a student in India?",
-    a: "Student Affairs offers weekly drop-in sessions, personal appointments, application help, and academic webinars. Teaching is in English. Live sessions are scheduled so India-based students can join. You also have access to COVE, the Campus of Virtual Education.",
+    q: "What support will I receive as an online student?",
+    a: "Student Affairs offers weekly drop-in sessions, personal appointments, application help, and academic webinars. Teaching is in English. Live sessions are scheduled so students in other time zones can join. You also have access to COVE, the Campus of Virtual Education.",
   },
 ];

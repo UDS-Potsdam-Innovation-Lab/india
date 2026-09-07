@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
 import { JsonLd, orgJsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
+import { noindexFollow } from "@/lib/seo";
 import "./globals.css";
 
 const blinker = Blinker({
@@ -52,8 +53,8 @@ export const metadata: Metadata = {
     title: "German UDS India",
     description: "German-accredited online degrees for learners in India.",
   },
-  robots: { index: true, follow: true },
-  alternates: { canonical: SITE.url },
+  robots: noindexFollow,
+  alternates: { canonical: SITE.mainSite },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

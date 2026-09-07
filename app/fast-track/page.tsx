@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { Cta } from "@/components/Cta";
 import { Faq } from "@/components/Faq";
 import { SITE } from "@/lib/site";
+import { masters } from "@/lib/programs";
 
 export const metadata: Metadata = {
   title: "Fast Track",
@@ -21,7 +22,7 @@ const faq = [
     a: "Fast Track is the one-year, 60 ECTS route into a German UDS Master's. You study online in English and graduate with a German university Master's — not a certificate short course.",
   },
   {
-    q: "Can I study from India?",
+    q: "Can I study without relocating?",
     a: "Yes. Fast Track is fully online. Full-time and part-time modes are available. You do not need to relocate to Germany for this programme.",
   },
 ];
@@ -34,7 +35,7 @@ export default function FastTrackPage() {
       <PageHero
         kicker="Fast Track"
         title="A one-year German Master's for STEM graduates."
-        body="Fast Track propels the opportunity to complete a German-accredited Master's in 12 months — fully online from India — if you already hold a STEM bachelor's with 240 ECTS or equivalent."
+        body="Fast Track propels the opportunity to complete a German-accredited Master's in 12 months — fully online — if you already hold a STEM bachelor's with 240 ECTS or equivalent."
       />
       <section className="site-container py-14">
         <div className="grid gap-10 lg:grid-cols-3">
@@ -48,9 +49,27 @@ export default function FastTrackPage() {
               </p>
               <p className="mt-4 leading-relaxed text-gray-700">
                 Study in English, full-time or part-time, with German UDS faculty. Tuition is €7,500.
-                Live in India, keep working if you choose the part-time mode, and graduate eligible to
-                apply for roles that require a recognised German university Master&apos;s.
+                Stay where you are, keep working if you choose the part-time mode, and graduate eligible
+                to apply for roles that require a recognised German university Master&apos;s.
               </p>
+            </div>
+            <div>
+              <h2 className="section-title">Programmes with Fast Track</h2>
+              <p className="mt-4 leading-relaxed text-gray-700">
+                Fast Track is offered on selected Master&apos;s programmes. If you hold a STEM bachelor&apos;s
+                with 240 ECTS, you can finish one of these degrees in one year instead of two.
+              </p>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-700">
+                {masters
+                  .filter((p) => p.fastTrack)
+                  .map((p) => (
+                    <li key={p.slug}>
+                      <Link href={`/study/masters/${p.slug}`} className="font-semibold text-navy hover:text-[#f18800]">
+                        {p.title}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
             </div>
             <div>
               <h2 className="section-title">Entry requirements</h2>

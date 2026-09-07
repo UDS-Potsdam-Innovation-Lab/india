@@ -1,29 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { ACCREDITORS as accreditors } from "@/lib/media";
 import { SITE } from "@/lib/site";
-
-const accreditors = [
-  {
-    src: "https://german-uds.de/logo/logo-WR.png",
-    alt: "Wissenschaftsrat",
-    href: "https://www.wissenschaftsrat.de/download/archiv/Konzeptpr%C3%BCfungen.pdf?__blob=publicationFile&v=0",
-  },
-  {
-    src: "https://german-uds.de/logo/logo-Akkreditierungsrat.png",
-    alt: "German Accreditation Council",
-    href: "https://antrag.akkreditierungsrat.de/akkrstudiengaenge/?hochschule=1e2b21b2-8dad-40a9-bd37-0c74b9116d39&limit=100",
-  },
-  {
-    src: "https://german-uds.de/logo/logo-asiin.png",
-    alt: "ASIIN",
-    href: "http://www.asiin-ev.de/pages/de/asiin/akkreditierung-studiengaenge/akkreditierte-studiengaenge.php?suchbegriff=German+University+of+Digital+Science",
-  },
-  {
-    src: "https://german-uds.de/logo/logo-brb.png",
-    alt: "Land Brandenburg",
-    href: "https://mwfk.brandenburg.de/mwfk/de/wissenschaft/hochschulen/nicht-staatliche-hochschulen/german-university-of-digital-science/",
-  },
-];
 
 export function Footer() {
   return (

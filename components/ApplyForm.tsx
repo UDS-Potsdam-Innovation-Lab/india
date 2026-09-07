@@ -8,6 +8,7 @@ import { SITE } from "@/lib/site";
 const cities = ["Bengaluru", "Hyderabad", "Pune", "Mumbai", "Delhi NCR", "Chennai", "Kolkata", "Other / remote"];
 const interests = [
   ...masters.map((p) => p.title),
+  ...masters.filter((p) => p.fastTrack).map((p) => `${p.title} (Fast Track)`),
   ...mbas.map((p) => p.title),
   "Fast Track",
   "Micro-Degree",
@@ -18,6 +19,11 @@ function resolvePreset(preset?: string) {
   if (!preset) return interests[0];
   const decoded = decodeURIComponent(preset);
   if (interests.includes(decoded)) return decoded;
+  const fastSlug = decoded.replace(/-fast-track$/, "");
+  if (fastSlug !== decoded) {
+    const fastMatch = masters.find((p) => p.slug === fastSlug && p.fastTrack);
+    if (fastMatch) return `${fastMatch.title} (Fast Track)`;
+  }
   const match = allPrograms().find((p) => p.slug === decoded || p.title === decoded);
   if (match) return match.title;
   if (/fast/i.test(decoded)) return "Fast Track";
@@ -36,7 +42,7 @@ export function ApplyForm({ preset }: { preset?: string }) {
   const [consent, setConsent] = useState(false);
 
   const mailto = useMemo(() => {
-    const subject = encodeURIComponent(`India enquiry: ${program}`);
+    const subject = encodeURIComponent(`Programme enquiry: ${program}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCity: ${city}\nProgramme: ${program}\n\n${message}\n\nI agree that German UDS may contact me about admissions.`,
     );
@@ -62,7 +68,7 @@ export function ApplyForm({ preset }: { preset?: string }) {
           <input required type="email" className="field" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label className="text-sm">
-          Phone (India)
+          Phone
           <input className="field" value={phone} onChange={(e) => setPhone(e.target.value)} />
         </label>
         <label className="text-sm">

@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Admissions and fees",
   description:
-    "Admission requirements, application steps, tuition of €7,500 per year and €900 Micro-Degrees, payment plans, and India-specific notes for German UDS.",
+    "Admission requirements, application steps, tuition of €7,500 per year and €900 Micro-Degrees, and payment plans for German UDS.",
 };
 
 export default function AdmissionsPage() {
@@ -15,7 +15,7 @@ export default function AdmissionsPage() {
     <>
       <PageHero
         kicker="Admissions"
-        title="How to apply from India"
+        title="How to apply"
         body="Direct application to German UDS. No uni-assist. Fully online programmes do not require a student visa, blocked account or APS for enrolment."
       />
       <section className="site-container py-14 space-y-12">
@@ -68,7 +68,7 @@ export default function AdmissionsPage() {
             Reliable high-speed internet. Computer (Windows or Mac) with webcam and microphone.
           </p>
           <Link href="/apply" className="btn-secondary mt-6">
-            Ask admissions from India →
+            Ask admissions →
           </Link>
         </div>
       </section>

@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Student Affairs",
   description:
-    "German UDS Student Affairs support for Indian applicants and students: weekly drop-in sessions, personal appointments, application help and academic webinars from enquiry to graduation.",
+    "German UDS Student Affairs support for applicants and students: weekly drop-in sessions, personal appointments, application help and academic webinars from enquiry to graduation.",
 };
 
 export default function StudentAffairsPage() {
@@ -16,7 +16,7 @@ export default function StudentAffairsPage() {
       <PageHero
         kicker="Student Affairs"
         title="Support for your academic journey — from first question to diploma."
-        body="Drop-in sessions and specialised webinars. If you need help completing an application, checking Fast Track eligibility (240 ECTS STEM), or understanding how a German degree works from India, this is the desk."
+        body="Drop-in sessions and specialised webinars. If you need help completing an application, checking Fast Track eligibility (240 ECTS STEM), or understanding how a fully online German degree works, this is the desk."
       />
       <section className="site-container py-14">
         <div className="grid gap-10 lg:grid-cols-2">
@@ -25,12 +25,12 @@ export default function StudentAffairsPage() {
             <h2 className="mt-2 font-blinker text-3xl font-semibold text-navy">Every Wednesday</h2>
             <p className="mt-4 text-gray-600">13:00–13:30 CET · online via Zoom</p>
             <p className="mt-2 text-gray-600">
-              India: typically 17:30–18:00 IST in winter (CET) and 16:30–17:00 IST in summer (CEST).
+              That is 17:30–18:00 IST in winter (CET) and 16:30–17:00 IST in summer (CEST).
             </p>
             <p className="mt-4 text-sm text-gray-500">
               German University of Digital Science, Potsdam. The meeting link activates 10 minutes before start.
             </p>
-            <a href={`mailto:${SITE.studentAffairsEmail}?subject=India%20drop-in%20session`} className="btn-cta mt-6">
+            <a href={`mailto:${SITE.studentAffairsEmail}?subject=Drop-in%20session`} className="btn-cta mt-6">
               Request this week&apos;s link
             </a>
           </article>

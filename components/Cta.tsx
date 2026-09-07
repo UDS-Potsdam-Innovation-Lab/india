@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BrandMark } from "./BrandMark";
 
 export function Cta({
-  title = "Start from India. Graduate German-accredited.",
+  title = "Start from home. Graduate German-accredited.",
   body = "Book a Student Affairs session or begin your application for the next April or October intake.",
   primary = { href: "/apply", label: "Apply now" },
   secondary = { href: "/student-affairs", label: "Talk to Student Affairs" },
