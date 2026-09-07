@@ -40,14 +40,14 @@ const STAGES: Stage[] = [
     step: "02",
     kicker: "On completion",
     title: "A full, state-recognised German degree",
-    body: "You graduate with the same M.Sc. or MBA awarded in Potsdam — accredited by the German Accreditation Council and assessed by ASIIN. Not a private diploma: an official German UDS credential.",
+    body: "You graduate with the same M.Sc. or MBA awarded in Potsdam — accredited by the German Accreditation Council and assessed by ASIIN. Not a private diploma: an official German UDS credential. The certificate shown is an example only.",
     points: [
       "Awarded by German UDS, Land Brandenburg",
       "120 ECTS Master's · 60 ECTS MBA",
       "Accreditation listed on the public register",
     ],
     image: JOURNEY_IMAGES.degree,
-    alt: "Official German UDS Micro-Degree certificate",
+    alt: "Example German UDS Micro-Degree certificate (sample, signatures removed)",
     fit: "contain",
     cta: { href: "/about", label: "How accreditation works" },
   },
@@ -56,14 +56,14 @@ const STAGES: Stage[] = [
     step: "03",
     kicker: "Afterwards",
     title: "A CV that reads on the European market",
-    body: "Your résumé carries a German university postgraduate degree, taught in English. That is the credential employers screen for in Germany, across the EU and internationally.",
+    body: "Your résumé carries a German university postgraduate degree, taught in English. That is the credential employers screen for in Germany, across the EU and internationally. The CV shown is an example only.",
     points: [
       "Recognised postgraduate qualification",
       "Apply from home, Germany or remotely",
       "Eligibility to apply — never a guaranteed placement",
     ],
     image: JOURNEY_IMAGES.career,
-    alt: "Sample graduate CV with a German UDS Master's",
+    alt: "Example graduate CV with a German UDS Master's (sample, signatures removed)",
     fit: "contain",
     cta: { href: "/why-india", label: "What this does and does not promise" },
   },
@@ -201,6 +201,11 @@ export function JourneyScroll() {
             {STAGES.map((stage) => (
               <article key={stage.id} className="glass-dark overflow-hidden rounded-[18px]">
                 <div className={`relative aspect-[16/10] ${stage.fit === "contain" ? "bg-white" : "bg-black"}`}>
+                  {(stage.id === "degree" || stage.id === "career") && (
+                    <span className="absolute left-3 top-3 z-10 rounded-md bg-[#fd9800] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
+                      Example
+                    </span>
+                  )}
                   <Image
                     src={stage.image}
                     alt={stage.alt}
@@ -316,6 +321,11 @@ export function JourneyScroll() {
                         className="journey-card"
                       >
                         <div className={`relative h-full w-full overflow-hidden rounded-[22px] border border-white/15 shadow-[0_50px_120px_rgba(0,0,0,0.6)] ${stage.fit === "contain" ? "bg-white" : "bg-[#05052a]"}`}>
+                          {(stage.id === "degree" || stage.id === "career") && (
+                            <span className="absolute left-4 top-4 z-10 rounded-md bg-[#fd9800] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
+                              Example
+                            </span>
+                          )}
                           <Image
                             src={stage.image}
                             alt={stage.alt}
