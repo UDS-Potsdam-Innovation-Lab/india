@@ -67,7 +67,7 @@ export const UNIQUE_IMAGES = {
 };
 
 export const JOURNEY_IMAGES = {
-  classes: "/journey/classes.png",
+  classes: "/journey/classes.jpg",
   degree: "/journey/degree.png",
   career: "/journey/resume.png",
 };
