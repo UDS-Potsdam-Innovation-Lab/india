@@ -41,6 +41,7 @@ export function HomeHero() {
         sizes="100vw"
         className="-z-10 object-cover object-center"
       />
+      <div aria-hidden className="hero-scrim" />
 
       <div className="site-container relative py-16 lg:py-20">
         <div className="hero-copy max-w-2xl">

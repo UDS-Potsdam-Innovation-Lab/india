@@ -532,11 +532,34 @@ body {
   }
 }
 
-/* Holds white hero type readable over the brighter areas of the photograph. */
+/* Darkens only the copy side so white clothing/walls in the photo cannot wash out type. */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 12% 42%, rgba(2, 2, 12, 0.78) 0%, rgba(2, 2, 12, 0.42) 38%, rgba(2, 2, 12, 0) 68%),
+    linear-gradient(105deg, rgba(2, 2, 12, 0.62) 0%, rgba(2, 2, 12, 0.34) 34%, rgba(2, 2, 12, 0.08) 54%, transparent 70%);
+}
+
 .hero-copy {
   text-shadow:
-    0 1px 2px rgba(2, 2, 24, 0.4),
-    0 2px 28px rgba(2, 2, 24, 0.45);
+    0 1px 2px rgba(0, 0, 0, 0.55),
+    0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.hero-copy h1 {
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.9),
+    0 2px 12px rgba(0, 0, 0, 0.75),
+    0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 639px) {
+  .hero-scrim {
+    background:
+      linear-gradient(180deg, rgba(2, 2, 12, 0.68) 0%, rgba(2, 2, 12, 0.52) 48%, rgba(2, 2, 12, 0.4) 100%);
+  }
 }
 
 .cycler {
